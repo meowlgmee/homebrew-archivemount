@@ -43,7 +43,7 @@ class Archivemount < Formula
     ENV["CFLAGS"] = "-I#{Formula["libarchive"].opt_include}"
     ENV["LDFLAGS"] = "-L#{Formula["libarchive"].opt_lib}"
 
-    ENV["FUSE_CFLAGS"] = "-I/usr/local/include/fuse"
+    ENV["FUSE_CFLAGS"] = "-I/usr/local/include"
     ENV["FUSE_LIBS"] = "-L/usr/local/lib"
 
     system "./configure", "--prefix=#{prefix}"
