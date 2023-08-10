@@ -40,8 +40,8 @@ class Archivemount < Formula
   end
 
   def install
-    ENV["CFLAGS"] = "-I#{Formula["libarchive"].opt_include}"
-    ENV["LDFLAGS"] = "-L#{Formula["libarchive"].opt_lib}"
+    ENV["CFLAGS"] = "-I#{Formula["libarchive"].opt_include} -I/usr/local/include"
+    ENV["LDFLAGS"] = "-L#{Formula["libarchive"].opt_lib} -L/usr/local/lib"
 
     ENV["FUSE_CFLAGS"] = "-I/usr/local/include"
     ENV["FUSE_LIBS"] = "-L/usr/local/lib"
