@@ -25,7 +25,7 @@ end
 class Archivemount < Formula
   desc "Archivemount is a piece of glue code between libarchive and FUSE . It can be used to mount a (possibly compressed) archive (as in .tar.gz or .tar.bz2) and use it like an ordinary filesystem."
   homepage "https://github.com/cybernoid/archivemount"
-  url "https://github.com/nexbeam/homebrew-archivemount/releases/download/libguestfs-1.50.0/archivemount-v0.9.1.zip"
+  url "https://github.com/nexbeam/homebrew-archivemount/releases/download/v0.9.1/archivemount-v0.9.1.zip"
   sha256 "64a6e4d3cfabb30601fe698ff58382e3bead5322e46a4dc12c5234e6c543db94"
 
   depends_on "automake" => :build
