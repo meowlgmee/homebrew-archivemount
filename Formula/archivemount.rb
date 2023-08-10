@@ -24,7 +24,6 @@ class Archivemount < Formula
   sha256 "c45332c0ecc522ab511effc97b32b089fb61eedd86695627be9715d7090598bf"
 
   def install
-    (prefix).install Dir["./*"]
-    Dir.glob(prefix/"bin/*") {|file| bin.install_symlink file}
+    bin.install_symlink Dir["bin/*"]
   end
 end
