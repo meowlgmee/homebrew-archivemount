@@ -25,8 +25,8 @@ end
 class Archivemount < Formula
   desc "Archivemount is a piece of glue code between libarchive and FUSE . It can be used to mount a (possibly compressed) archive (as in .tar.gz or .tar.bz2) and use it like an ordinary filesystem."
   homepage "https://github.com/cybernoid/archivemount"
-  url "https://github.com/nexbeam/homebrew-archivemount/releases/download/v0.9.1/archivemount-v0.9.1.zip"
-  sha256 "64a6e4d3cfabb30601fe698ff58382e3bead5322e46a4dc12c5234e6c543db94"
+  url "https://github.com/nexbeam/homebrew-archivemount/releases/download/v0.9.1/archivemount_v0.9.1.tar.gz"
+  sha256 "c46dead17fc949c78bf206ada336a041e75373e12386beca074348d794b22cd0"
 
   depends_on "automake" => :build
   depends_on "autoconf" => :build
@@ -42,11 +42,8 @@ class Archivemount < Formula
   def install
     ENV["CFLAGS"] = "-I#{Formula["libarchive"].opt_include}"
     ENV["LDFLAGS"] = "-L#{Formula["libarchive"].opt_lib}"
-
     system "./configure", "--prefix=#{prefix}"
-
     system "make"
-
     system "make", "install"
 
     bin.install_symlink Dir["bin/*"]
