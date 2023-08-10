@@ -39,12 +39,6 @@ class Archivemount < Formula
     depends_on OsxfuseRequirement => :build
   end
 
-  # the linux support is a bit of a guess, since homebrew doesn't currently build bottles for libvirt
-  # that means brew test-bot's --build-bottle will fail under ubuntu-latest runners
-  on_linux do
-    depends_on "libfuse"
-  end
-
   def install
     ENV["CFLAGS"] = "-I#{Formula["libarchive"].opt_include}"
     ENV["LDFLAGS"] = "-L#{Formula["libarchive"].opt_lib}"
